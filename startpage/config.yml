@@ -1,0 +1,82 @@
+# Server and other properties
+properties:
+  port: 8080
+  refreshInterval: 60
+
+# Quick links to be displayed under search bar in Main page
+# list[1,2,3,4]Names field indicate the name for the column
+# list[1,2,3,4] take number of title and url pairs to be shown
+quicklinks:
+  list1Name: Services
+  list1:
+    - title: ProtonMail
+      url: https://account.proton.me/login
+    - title: Tuta
+      url: https://app.tuta.com/login
+  list2Name: Social
+  list2:
+    - title: Reddit
+      url: https://reddit.com/
+  list3Name: Tools
+  list3:
+    - title: Virustotal
+      url: https://www.virustotal.com/gui/home/search
+    - title: Cyberchef
+      url: https://cyberchef.org/
+    - title: Dogbolt
+      url: https://dogbolt.org
+  list4Name: Materials
+  list4:
+    - title: GTFOBins
+      url: https://gtfobins.github.io/
+    - title: MITRE ATT&CK
+      url: https://attack.mitre.org
+
+# RSS Feeds go here
+# Feeds can be categorized, the category can be anything like security and 
+# privacy as shown below
+# Under each category fill in the feed XML URL and name pairs
+rss:
+  security:
+    - title: The Hacker News
+      url: https://feeds.feedburner.com/TheHackersNews
+    - title: Google Cloud
+      url: https://cloudblog.withgoogle.com/topics/threat-intelligence/rss
+    - title: Kerbs on Security
+      url: https://krebsonsecurity.com/feed/
+    - title: Kaspersky Securelist
+      url: https://securelist.com/feed/
+    - title: Unit 42 Blog
+      url: https://unit42.paloaltonetworks.com/feed/
+    - title: NixCraft
+      url: https://www.cyberciti.biz/atom/atom.xml
+    - title: Bleeping Computer
+      url: https://www.bleepingcomputer.com/feed/
+  privacy:
+    - title: EFF 
+      url: https://www.eff.org/rss/updates.xml
+    - title: My Privacy Blog
+      url: https://www.myprivacy.blog/rss/
+  learning:
+    - title: Hacker Noob Tips
+      url: https://www.hackernoob.tips/rss/
+
+# Youtube feed go here
+# No category feature here as of now. Just fill in Channel name and XML list
+# XML URL is https://www.youtube.com/feeds/videos.xml?channel_id=<channel id> 
+# where channel ID of the respective channel needs to filled in place of <channel id>
+youtube:
+  - title: Low Level TV
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UC6biysICWOJ-C3P4Tyeggzg
+  - title: John Hammond
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCVeW9qkBjo3zosnqUbG7CFw
+  - title: Live Overflow
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w
+  - title: ThePrimeagen
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ
+  - title: Mental Outlaw
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
+  - title: The Hated One
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCjr2bPAyPV7t35MvcgT3W8Q
+  - title: Fireship
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA

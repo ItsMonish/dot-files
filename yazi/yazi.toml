@@ -1,0 +1,35 @@
+[mgr]
+linemode = "size"
+
+[preview]
+wrap = "yes"
+image_filter = "nearest"
+image_quality = 50
+
+[opener]
+play = [
+    { run = "vlc \"$@\"", orphan = true }
+]
+edit = [
+    { run = "nvim \"$@\"", block = true }
+]
+image = [
+    { run = "ristretto \"$@\"", orphan = true}
+]
+openit = [
+    { run = "xdg-open \"$@\"" }
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "edit" },
+    { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "play" },
+    { mime = "image/*", use = "image"},
+    { name = "*.json", use = "edit" },
+]
+
+
+[input]
+cursor_blink = true
+
