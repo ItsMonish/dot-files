@@ -1,0 +1,92 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: rgba(10, 10, 10, 0.4);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#workspaces {
+    background: rgba(5, 5, 5, 0.6);
+    border-radius: 10px;
+}
+
+#workspaces button {
+    background: none;
+    background-color: transparent;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+    background: rgba(10, 10, 10, 0.4);
+}
+
+#workspaces button.empty {
+   color: #9A532E;
+}
+
+#workspaces button.visible {
+    background-color: #ffffff;
+    color: #101010;
+}
+
+#workspaces button:hover {
+    background-color: #ffffff;
+    color: #101010;
+}
+
+#window {
+    color: #ffffff;
+    min-width: 150px;
+}
+
+#tray {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#custom-notification {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    background-color: transparent;
+    box-shadow: none;
+    border-color: transparent;
+    color: transparent;
+}
+
+#pulseaudio-slider slider:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 10px;
+    border-radius: 8px;
+    background: #343434;
+}
+
+#pulseaudio-slider highlight {
+    border-radius: 8px;
+    background-color: #a13dff;
+    border-color: #a13dff;
+}
+
+#network {
+    min-width: 200px;
+}
+
+#cpu,
+#memory {
+    font-size: 16px;
+}

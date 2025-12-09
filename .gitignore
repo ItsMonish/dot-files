@@ -1,7 +1,7 @@
 fish/*tmp*
 fish/functions/_*.fish
 fish/functions/tide/*
-fish/fish_variables
+fish/fish_variables*
 
 tmux/plugins/*
 

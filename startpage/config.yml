@@ -31,6 +31,8 @@ quicklinks:
       url: https://gtfobins.github.io/
     - title: MITRE ATT&CK
       url: https://attack.mitre.org
+    - title: Hacktricks
+      url: https://book.hacktricks.wiki/en/index.html
 
 # RSS Feeds go here
 # Feeds can be categorized, the category can be anything like security and 
