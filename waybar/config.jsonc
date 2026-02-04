@@ -61,7 +61,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "rotate": 0,
-        "format-muted": "婢",
+        "format-muted": "󰝟",
         "tooltip-format": "{desc}",
         "scroll-step": 5,
         "format-icons": {

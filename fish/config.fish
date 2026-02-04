@@ -34,6 +34,7 @@ alias pyinit="source venv/bin/activate.fish"
 alias mvtmp="cd $(mktemp -d)"
 
 #Custom Path Declarations:
-set PATH /home/revenant/.spicetify /usr/local/sbin /usr/local/bin /usr/bin /home/revenant/.dotnet/tools /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl/ /home/revenant/.local/bin/ /home/revenant/Sources/scripts/
-set CLASSPATH $CLASSPATH /home/revenant/Sources/Jar Files/
+set PATH $HOME/.spicetify /usr/local/sbin /usr/local/bin /usr/bin $HOME/.dotnet/tools /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl/ $HOME/.local/bin/ $HOME/Sources/scripts/
 
+# For the reverse symbol in tide prompt
+set -g fish_key_bindings fish_hybrid_key_bindings

@@ -2,8 +2,16 @@ fish/*tmp*
 fish/functions/_*.fish
 fish/functions/tide/*
 fish/fish_variables*
+fish/functions/fisher.fish
+fish/functions/fzf_configure_bindings.fish
+fish/functions/tide.fish
 
 tmux/plugins/*
 
 startpage/database.db
 startpage/application.log
+
+fish/conf.d/fish_frozen_key_bindings.fish
+fish/conf.d/fish_frozen_theme.fish
+
+startpage/database.db.bkup

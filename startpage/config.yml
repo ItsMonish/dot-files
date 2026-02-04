@@ -2,6 +2,8 @@
 properties:
   port: 8080
   refreshInterval: 60
+  retryInterval: 5
+  dbPath: .config/startpage/database.db
 
 # Quick links to be displayed under search bar in Main page
 # list[1,2,3,4]Names field indicate the name for the column
