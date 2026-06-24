@@ -66,8 +66,8 @@
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰂯",
+            "headset": "󰂯",
             "phone": "",
             "portable": "",
             "car": "",

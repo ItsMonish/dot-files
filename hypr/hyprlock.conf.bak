@@ -22,7 +22,9 @@ source = ./colors.conf
 ################
 
 # See https://wiki.hypr.land/Configuring/Monitors/
-monitor=,1920x1080@144,0x0,1
+monitor=eDP-1,1920x1080@144,0x0,1
+#monitor = , preferred, auto, 1
+monitor=,preferred, auto, 1, mirror, eDP-1
 
 
 ###################
@@ -35,8 +37,8 @@ monitor=,1920x1080@144,0x0,1
 $terminal = ghostty
 $fileManager = thunar
 $menu = $HOME/.config/rofi/launchers/type-6/launcher.sh
-# $lock = $HOME/Sources/scripts/lock.sh
-$lock = hyprlock
+$lock = $HOME/Sources/scripts/lock.sh
+#$lock = hyprlock
 $browser = firefox
 
 
@@ -52,13 +54,14 @@ exec-once = hyprpm reload
 exec-once = nm-applet &
 # exec-once = waybar & hyprpaper & firefox
 exec-once = $HOME/.local/bin/StartPage
-exec-once = swaync
+# exec-once = swaync
 exec-once = kdeconnectd
 exec-once = waybar
 exec-once = awww-daemon
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 exec-once = systemctl --user start hyprpolkitagent
+exec-once = syshud -p left -o v -m 10 10 10 10
 
 #############################
 ### ENVIRONMENT VARIABLES ###
@@ -201,7 +204,6 @@ animations {
 
 # See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
 dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
     preserve_split = true # You probably want this
 }
 
@@ -228,6 +230,7 @@ input {
     kb_model =
     kb_options =
     kb_rules =
+    numlock_by_default = true
 
     follow_mouse = 1
 
@@ -259,12 +262,12 @@ $mainMod = SUPER # Sets "Windows" key as main modifier
 # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 bind = $mainMod, T, exec, $terminal
 bind = $mainMod, C, killactive,
-bind = $mainMod, M, exit,
+bind = $mainMod SHIFT, M, exit,
 bind = CTRL ALT, H, exec, $fileManager
 bind = $mainMod, F, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, Q, togglesplit, # dwindle
+# bind = $mainMod, Q, togglesplit, # dwindle
 bind = CTRL ALT, L, exec, $lock
 bind = $mainMod, B, exec, $browser
 bind = $mainMod, V, exec, cliphist list | rofi -theme $HOME/.config/rofi/launchers/type-4/style-3.rasi -dmenu -display-columns 2 | cliphist decode | wl-copy
@@ -353,19 +356,16 @@ windowrule = suppress_event maximize, match:class .*
 # Fix some dragging issues with XWayland
 windowrule = no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0
 
-# Need to read stuff on terminal
+# Blur inactive windows and don't blur active ones
+windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class .*
+
+# Could use some transparency on terminal
 windowrule = opacity 0.9 override, match:class com.mitchellh.ghostty
 
-# No need for transparency in browsers
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class firefox
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class chromium
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class brave-browser
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class com-rapidminer-launcher-GUILauncher
-
 # Other transparency exclusions
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class ONLYOFFICE
-windowrule = opacity 1.0 override 0.8 override 1.0 override, match:class gimp
 windowrule = opacity 0.95 override 0.8 override 1.0 override, match:class code
+windowrule = opacity 0.95 override 0.8 override 1.0 override, match:class obsidian
+windowrule = opacity 0.95 override 0.8 override 1.0 override, match:class com.libretro.RetroArch
 
 # Need float for pulseaudio volume control
 windowrule = float on, match:class org.pulseaudio.pavucontrol
@@ -373,13 +373,19 @@ windowrule = float on, match:class org.pulseaudio.pavucontrol
 # Flameshot rules
 windowrule = no_anim on, float on, move (0) (0), pin on, no_initial_focus on, match:class ^(flameshot)$
 
+# Thunar rules
+windowrule = float on, match:title (Rename.*)$
+windowrule = float on, match:title ^(File Operation Progress)$
+windowrule = float on, match:title ^(Properties)$
+windowrule = float on, match:title ^(Confirm Replace)$
+
 ################
 ### PLUGINS  ###
 ################
 
 plugin {
     hyprexpo {
-        columns = 2
+        columns = 3
         gap_size = 5
         bg_col = rgb(111111)
         workspace_method = center current # [center/first] [workspace] e.g. first 1 or center m+1
@@ -387,3 +393,24 @@ plugin {
         gesture_distance = 300 
     }
 }
+
+# hyprexpo-plus keymaps
+submap = hyprexpo
+    # Arrow key navigation
+    bind = , left,  hyprexpo:kb_focus, left
+    bind = , right, hyprexpo:kb_focus, right
+    bind = , up,    hyprexpo:kb_focus, up
+    bind = , down,  hyprexpo:kb_focus, down
+    bind = , return, hyprexpo:kb_confirm
+
+    # Direct selection via numbers (1-10)
+    bind = , 1, hyprexpo:kb_selecti, 1
+    bind = , 2, hyprexpo:kb_selecti, 2
+    bind = , 3, hyprexpo:kb_selecti, 3
+    bind = , 4, hyprexpo:kb_selecti, 4
+    bind = , 5, hyprexpo:kb_selecti, 5
+    bind = , 6, hyprexpo:kb_selecti, 6
+    bind = , 7, hyprexpo:kb_selecti, 7
+    bind = , 8, hyprexpo:kb_selecti, 8
+    bind = , 9, hyprexpo:kb_selecti, 9
+submap = reset

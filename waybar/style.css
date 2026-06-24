@@ -23,7 +23,7 @@ window#waybar {
 }
 
 #workspaces button.empty {
-   color: #5D5E57;
+   color: #573D42;
 }
 
 #workspaces button.visible {
@@ -78,8 +78,8 @@ window#waybar {
 
 #pulseaudio-slider highlight {
     border-radius: 8px;
-    background-color: #a13dff;
-    border-color: #a13dff;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
 #network {

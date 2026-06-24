@@ -1,0 +1,16 @@
+-------------------
+---- AUTOSTART ----
+-------------------
+
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("hyprpm reload")
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("$HOME/.local/bin/StartPage")
+  hl.exec_cmd("kdeconnectd")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("wl-paste --type text --watch cliphist store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist store")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("syshud -p left -o v -m 10 10 10 10")
+end)

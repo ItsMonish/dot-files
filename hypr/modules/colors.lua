@@ -1,0 +1,22 @@
+return {
+    background = "#0d0d1e",
+    foreground = "#c2c2c6",
+    cursor     = "#c2c2c6",
+
+    color0  = "#0d0d1e",
+    color1  = "#573D42",
+    color2  = "#36485B",
+    color3  = "#4E5868",
+    color4  = "#555C6A",
+    color5  = "#AA5F3C",
+    color6  = "#3A6584",
+    color7  = "#c2c2c6",
+    color8  = "#5c5c70",
+    color9  = "#573D42",
+    color10 = "#36485B",
+    color11 = "#4E5868",
+    color12 = "#555C6A",
+    color13 = "#AA5F3C",
+    color14 = "#3A6584",
+    color15 = "#c2c2c6",
+}
