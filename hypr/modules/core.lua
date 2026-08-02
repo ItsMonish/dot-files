@@ -5,7 +5,7 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 15,
 
-        border_size = 2,
+        border_size = 1,
 
         col = {
             active_border   = { colors = { color.color2, color.color1 }, angle = 45 },
@@ -64,7 +64,7 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper = -1,
-        disable_hyprland_logo   = false,
+        disable_hyprland_logo   = true,
     },
 })
 

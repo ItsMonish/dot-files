@@ -31,7 +31,7 @@ hl.window_rule({
     match = {
         class = "com.mitchellh.ghostty",
     },
-    opacity = "0.9 override"
+    opacity = "0.95 override"
 })
 
 hl.window_rule({
@@ -47,7 +47,7 @@ hl.window_rule({
     match = {
         class = "^(flameshot)$"
     },
-    animation = "fade",
+    no_anim = true,
     rounding = 0,
     border_size = 0,
     fullscreen_state = "0 0",
@@ -61,6 +61,8 @@ hl.window_rule({ name = "thunar-rename", match = { title = "(Rename.*)$" }, floa
 hl.window_rule({ name = "thunar-fileop-prog", match = { title = "^(File Operation Progress)$" }, float = true})
 hl.window_rule({ name = "thunar-prop", match = { title = "^(Properties)$" }, float = true })
 hl.window_rule({ name = "thunar-replace", match = { title = "^(Confirm Replace)$" }, float = true })
+hl.window_rule({ name = "thunar-extract", match = { title = "^(Extract archive)$"}, float= true})
+hl.window_rule({ name = "grsync", match = { class = "^(grsync)$"}, float= true})
 
 hl.layer_rule({ match = { namespace = "swaync-control-center" }, blur  = true, ignore_alpha = 0, animation = "slide right"})
 hl.layer_rule({ match = { namespace = "swaync-notification-window" }, blur  = true, ignore_alpha = 0, animation = "slide right"})
