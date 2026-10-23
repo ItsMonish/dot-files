@@ -61,20 +61,20 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "rotate": 0,
-        "format-muted": "󰝟",
+        "format-muted": "󰝟 ",
         "tooltip-format": "{desc}",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
+            "headphone": " ",
             "hands-free": "󰂯",
             "headset": "󰂯",
-            "phone": "",
-            "portable": "",
-            "car": "",
+            "phone": " ",
+            "portable": " ",
             "default": [
                 "",
-                "",
-                ""
+                " ",
+                " ",
+                " "
             ]
         }
     },

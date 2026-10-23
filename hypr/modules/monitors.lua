@@ -14,7 +14,7 @@ hl.monitor({
 hl.monitor({
     output   = "",
     mode     = "preferred",
-    position = "auto",
+    position = "1920x1080",
     scale    = "1",
     mirror   = "eDP-1"
 })
